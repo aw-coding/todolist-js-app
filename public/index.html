@@ -11,12 +11,14 @@
     <h1>Todo List App</h1>
     <div id="app">
         <ul>
-            <li v-for="item in items">{{ item }}</li>
+            <li v-for="item in items">{{ item.name }} {{item.priority}}</li>
           </ul>
           
           <form v-on:submit.prevent="saveNewItem"> 
             <label for="new-item">Add a new task</label>
             <input id="new-item" type="text" v-model='newItem'/>
+            <label for="new-item">Give it a priority</label>
+            <input id="new-item" type="text" v-model='newItemPriority'/>
             <input type="submit" value ="Save New Item" />
           </form>
 

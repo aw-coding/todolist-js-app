@@ -4,13 +4,19 @@ document.addEventListener('DOMContentLoaded', () => {
     new Vue({
         el: "#app",
         data: {
-            items: ['1', '1'],
-            newItem: ""
+            items: [
+                {name: 'Do shoppping', priority: 3},
+                {name: 'Clean shower', priority: 4},
+                {name: 'Finish boring book', priority: 1}
+            ],
+            newItem: "",
+            newItemPriority: ""
         },
         methods: {
             saveNewItem: function(){
-                this.items.push(this.newItem);
+                this.items.push({name:this.newItem, priority:this.newItemPriority});
                 this.newItem = "";
+                this.newItemPriority = "";
             }
         }
     })
