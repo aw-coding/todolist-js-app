@@ -2,10 +2,16 @@ import Vue from 'vue';
 
 document.addEventListener('DOMContentLoaded', () => {
     new Vue({
-        el:"#app",
+        el: "#app",
         data: {
-            todoItems: ['1', '1'],
+            items: ['1', '1'],
             newItem: ""
+        },
+        methods: {
+            saveNewItem: function(){
+                this.items.push(this.newItem);
+                this.newItem = "";
+            }
         }
     })
 
